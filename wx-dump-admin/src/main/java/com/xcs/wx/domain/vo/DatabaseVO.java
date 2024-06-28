@@ -3,19 +3,21 @@ package com.xcs.wx.domain.vo;
 import lombok.Data;
 
 /**
- * @author xcs
- * @date 2023年12月21日 18时13分
- **/
+ * DatabaseVO
+ *
+ * @author 林雷
+ * @date 2024年6月28日11:08:45
+ */
 @Data
 public class DatabaseVO {
 
-    private String dbName;
+    /**
+     * 文件路径
+     */
+    private String filePath;
 
-    private String dbPath;
-
-    private String status;
-
-    private String desc;
-
-    private String lastSyncTime;
+    /**
+     * 文件大小
+     */
+    private String fileSize;
 }

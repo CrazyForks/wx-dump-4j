@@ -17,21 +17,20 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
+ * 联系人头像 Repository 实现类
+ *
  * @author xcs
- * @date 2023年12月21日 18时35分
- **/
+ * @date 2023年12月21日18:38:19
+ */
 @Repository
 @DS(value = DataSourceType.MICRO_MSG_DB)
-public class ContactHeadImgUrlRepositoryImpl extends ServiceImpl<ContactHeadImgUrlMapper, ContactHeadImgUrl>
-        implements ContactHeadImgUrlRepository {
+public class ContactHeadImgUrlRepositoryImpl extends ServiceImpl<ContactHeadImgUrlMapper, ContactHeadImgUrl> implements ContactHeadImgUrlRepository {
 
     @Override
     public Map<String, String> queryHeadImgUrl(List<String> usrNames) {
-        // 构建查询条件
         Wrapper<ContactHeadImgUrl> wrapper = Wrappers.<ContactHeadImgUrl>lambdaQuery()
                 .select(ContactHeadImgUrl::getUsrName, ContactHeadImgUrl::getSmallHeadImgUrl)
                 .in(ContactHeadImgUrl::getUsrName, usrNames);
-        // 返回头像并转换成map
         return Optional.ofNullable(super.list(wrapper))
                 .map(headImgUrls -> headImgUrls.stream().collect(Collectors.toMap(ContactHeadImgUrl::getUsrName, ContactHeadImgUrl::getSmallHeadImgUrl)))
                 .orElse(Collections.emptyMap());
@@ -39,11 +38,9 @@ public class ContactHeadImgUrlRepositoryImpl extends ServiceImpl<ContactHeadImgU
 
     @Override
     public String queryHeadImgUrlByUserName(String userName) {
-        // 构建查询条件
         Wrapper<ContactHeadImgUrl> wrapper = Wrappers.<ContactHeadImgUrl>lambdaQuery()
                 .select(ContactHeadImgUrl::getUsrName, ContactHeadImgUrl::getSmallHeadImgUrl)
                 .eq(ContactHeadImgUrl::getUsrName, userName);
-        // 返回联系人头像
         return Optional.ofNullable(super.getOne(wrapper))
                 .map(ContactHeadImgUrl::getSmallHeadImgUrl)
                 .orElse(null);

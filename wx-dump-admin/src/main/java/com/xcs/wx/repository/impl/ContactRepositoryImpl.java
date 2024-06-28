@@ -20,7 +20,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * 联系人Repository实现类
+ * 联系人 Repository 实现类
  *
  * @author xcs
  * @date 2023年12月22日 14时21分
@@ -55,6 +55,16 @@ public class ContactRepositoryImpl extends ServiceImpl<ContactMapper, Contact> i
 
         // 如果备注不为空则取备注，否则取联系人的昵称
         return StrUtil.isNotBlank(contact.getRemark()) ? contact.getRemark() : contact.getNickName();
+    }
+
+    @Override
+    public String getNickName(String userName) {
+        LambdaQueryWrapper<Contact> wrapper = Wrappers.<Contact>lambdaQuery()
+                .select(Contact::getNickName)
+                .eq(Contact::getUserName, userName);
+        return Optional.ofNullable(super.getOne(wrapper))
+                .map(Contact::getNickName)
+                .orElse(null);
     }
 
     @Override

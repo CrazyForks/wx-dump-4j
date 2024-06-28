@@ -5,7 +5,7 @@ import { PageContainer } from '@ant-design/pro-layout';
 import { Avatar, Button, Card, Divider, Flex, List, Modal, Space, Tag, Typography } from 'antd';
 import React, { useState } from 'react';
 import './Style/ChatRoom.less';
-import {queryRecoverContact,exportRecoverContact} from "@/services/Wechat/RecoverContact";
+import {queryRecoverContact,exportRecoverContact} from "@/services/RecoverContact";
 
 const ChatRoom: React.FC = () => {
 

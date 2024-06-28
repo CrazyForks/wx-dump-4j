@@ -1,5 +1,5 @@
-import { queryMsg } from '@/services/Wechat/Msg';
-import { Avatar, Button, Card, Flex, Image, List, Spin, Typography } from 'antd';
+import { queryMsg } from '@/services/Msg';
+import { Avatar, Button, Card, Flex, Image, List, Typography } from 'antd';
 import React, { useEffect, useRef, useState } from 'react';
 import './Style/Chat.less';
 
@@ -98,19 +98,17 @@ const Chat: React.FC<ChatProps> = ({ userName }) => {
                               src={`/api/image/downloadImgFormLocal?localPath=${encodeURIComponent(item.thumb)}`}
                               preview={{
                                 src: `/api/image/downloadImgFormLocal?localPath=${encodeURIComponent(item.image)}`,
+                                destroyOnClose: true,
                               }}
-                              placeholder={
-                                <Flex justify="center">
-                                  <Spin size="small" />
-                                </Flex>
-                              }
+                              fallback="/img/404.png"
+                              placeholder={true}
                             />
                           </Flex>
                         );
                       } else if (item.type === 47 && item.subType === 0) {
                         return (
                           <Image
-                            width={200}
+                            width={150}
                             src={`/api/image/downloadImg?path=${encodeURIComponent(item.emojiUrl)}`}
                           />
                         );

@@ -2,13 +2,19 @@ package com.xcs.wx.domain.dto;
 
 import lombok.Data;
 
+/**
+ * DecryptDTO
+ *
+ * @author xcs
+ * @date 2023年12月31日15:25:21
+ */
 @Data
 public class DecryptDTO {
 
     /**
-     * 秘钥
+     * pid
      */
-    private String key;
+    private int pid;
 
     /**
      * 文件目录
@@ -19,4 +25,24 @@ public class DecryptDTO {
      * 微信Id
      */
     private String wxId;
+
+    /**
+     * 昵称
+     */
+    private String nickname;
+
+    /**
+     * 版本号
+     */
+    private String version;
+
+    /**
+     * 账号
+     */
+    private String account;
+
+    /**
+     * 手机号
+     */
+    private String mobile;
 }

@@ -1,4 +1,4 @@
-import { queryRecentUsedKeyWord } from '@/services/Wechat/DashBoard';
+import { queryRecentUsedKeyWord } from '@/services/DashBoard';
 import { WordCloud } from '@ant-design/plots';
 import React, { useEffect, useState } from 'react';
 

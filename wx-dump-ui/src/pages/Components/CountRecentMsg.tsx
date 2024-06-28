@@ -1,4 +1,4 @@
-import { countRecentMsgs } from '@/services/Wechat/DashBoard';
+import { countRecentMsgs } from '@/services/DashBoard';
 import { Line } from '@ant-design/plots';
 import React, { useEffect, useState } from 'react';
 

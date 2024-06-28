@@ -184,7 +184,7 @@ interface CardLink {
   url: string;
 }
 
-interface WeChat {
+interface WeChatConfig {
   pid: number;
   baseAddress: number;
   version: string;
@@ -194,6 +194,13 @@ interface WeChat {
   key: string;
   basePath: string;
   wxId: string;
+}
+
+interface Decrypt {
+  fileName: string;
+  fileSize: string;
+  currentProgress: number;
+  total: number;
 }
 
 interface MsgTypeDistributionItem {
@@ -230,3 +237,32 @@ type RecoverContactParams = {
   nickname?: string;
   remark?: string;
 };
+
+interface UserItem {
+  wxId: string;
+  nickname: string;
+  avatar: string;
+  current: boolean;
+}
+
+type SwitchUserParams = {
+  wxId?: string;
+};
+
+type DatabaseParams = {
+  wxId?: string;
+};
+
+interface DatabaseItem {
+  filePath: string;
+  fileSize: string;
+}
+
+interface UserInfo {
+  basePath: string;
+  wxId: string;
+  nickname: string;
+  version: string;
+  account: string;
+  mobile: string;
+}

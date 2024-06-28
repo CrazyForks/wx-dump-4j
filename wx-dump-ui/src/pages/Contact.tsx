@@ -1,4 +1,4 @@
-import {exportContact, queryContact, queryContactLabel} from '@/services/Wechat/Contact';
+import {exportContact, queryContact, queryContactLabel} from '@/services/Contact';
 import {DownloadOutlined} from '@ant-design/icons';
 import type {ProColumns, RequestOptionsType} from '@ant-design/pro-components';
 import {ProTable} from '@ant-design/pro-components';
@@ -6,7 +6,7 @@ import {PageContainer} from '@ant-design/pro-layout';
 import {Avatar, Button, Divider, Flex, Modal, Space, Tag} from 'antd';
 import React, {useState} from 'react';
 import Chat from './Chat';
-import {exportMsg} from "@/services/Wechat/Msg";
+import {exportMsg} from "@/services/Msg";
 
 const Contact: React.FC = () => {
   const [isContactDetailOpen, setIsContactDetailOpen] = useState(false);
@@ -176,7 +176,7 @@ const Contact: React.FC = () => {
             icon={<DownloadOutlined/>}
             type="primary"
           >
-            导出联系人
+            导出
           </Button>,
         ]}
       />

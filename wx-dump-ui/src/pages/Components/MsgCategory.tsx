@@ -1,4 +1,4 @@
-import { msgTypeDistribution } from '@/services/Wechat/DashBoard';
+import { msgTypeDistribution } from '@/services/DashBoard';
 import { Pie } from '@ant-design/plots';
 import React, { useEffect, useState } from 'react';
 

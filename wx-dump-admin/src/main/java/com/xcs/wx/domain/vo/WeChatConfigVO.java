@@ -5,13 +5,15 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 /**
+ * WeChatConfigVO
+ *
  * @author xcs
  * @date 2023年12月25日 09时38分
  **/
 @Data
 @RequiredArgsConstructor
 @AllArgsConstructor
-public class WeChatVO {
+public class WeChatConfigVO {
 
     /**
      * 进程Id
@@ -42,11 +44,6 @@ public class WeChatVO {
      * 手机号
      */
     private String mobile;
-
-    /**
-     * 秘钥
-     */
-    private String key;
 
     /**
      * 文件目录

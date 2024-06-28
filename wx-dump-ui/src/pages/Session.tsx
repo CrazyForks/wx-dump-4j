@@ -1,4 +1,4 @@
-import {querySession} from '@/services/Wechat/Session';
+import {querySession} from '@/services/Session';
 import {ProCard} from '@ant-design/pro-components';
 import {Avatar, List, Typography} from 'antd';
 import {useEffect, useState} from 'react';

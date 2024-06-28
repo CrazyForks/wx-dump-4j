@@ -1,4 +1,4 @@
-import { statsPanel } from '@/services/Wechat/DashBoard';
+import { statsPanel } from '@/services/DashBoard';
 import RcResizeObserver from 'rc-resize-observer';
 import React, { useEffect, useState } from 'react';
 import { StatisticCard } from '@ant-design/pro-components';

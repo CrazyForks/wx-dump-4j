@@ -2,7 +2,7 @@ import {
   exportChatRoomDetail,
   queryChatRoom,
   queryChatRoomDetail,
-} from '@/services/Wechat/ChatRoom';
+} from '@/services/ChatRoom';
 import { DownloadOutlined } from '@ant-design/icons';
 import type { ProColumns } from '@ant-design/pro-components';
 import { ProDescriptions, ProTable } from '@ant-design/pro-components';
@@ -11,7 +11,7 @@ import { Avatar, Button, Card, Divider, Flex, List, Modal, Space, Tag, Typograph
 import React, { useState } from 'react';
 import Chat from './Chat';
 import './Style/ChatRoom.less';
-import {exportMsg} from "@/services/Wechat/Msg";
+import {exportMsg} from "@/services/Msg";
 
 const ChatRoom: React.FC = () => {
   const [isChatRoomDetailOpen, setIsChatRoomDetailOpen] = useState(false);
@@ -190,7 +190,7 @@ const ChatRoom: React.FC = () => {
             type="primary"
             onClick={() => setIsChatRoomExportOpen(true)}
           >
-            导出群聊
+            导出
           </Button>,
         ]}
       />

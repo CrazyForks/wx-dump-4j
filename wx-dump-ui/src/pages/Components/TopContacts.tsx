@@ -1,4 +1,4 @@
-import { topContacts } from '@/services/Wechat/DashBoard';
+import { topContacts } from '@/services/DashBoard';
 import { Avatar } from 'antd';
 import React, { useEffect, useState } from 'react';
 import styles from '../Style/TopContacts.less';
